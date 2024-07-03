@@ -23,11 +23,8 @@ namespace AmegaWebSocket
             builder.Services.AddHostedService<PriceUpdater>();
             builder.Services.AddHostedService<PriceBroadcaster>();
             var app = builder.Build();
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
